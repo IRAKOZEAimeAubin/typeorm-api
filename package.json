@@ -7,9 +7,11 @@
     "prestart": "yarn build",
     "start": "node dist/server.js",
     "preserve": "yarn build",
-    "serve": "tsc-watch --onSuccess \"node dist/server.js 9001\"",
-    "prepopulate":"yarn build",
-    "populate":"node dist/src/models/populate-db.js"
+    "serve": "tsc-watch --onSuccess \"node dist/src/server.js 9001\"",
+    "prepopulate": "yarn build",
+    "populate": "node dist/src/models/populate-db.js",
+    "predelete": "yarn build",
+    "delete": "node dist/src/models/delete-db.js"
   },
   "author": "",
   "license": "MIT",
