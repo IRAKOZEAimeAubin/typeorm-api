@@ -15,7 +15,7 @@ export async function findCourseByUrl(
     const courseUrl = request.params.courseUrl
 
     if (!courseUrl) {
-      throw `Could not request course url from the request`
+      throw `Could not extract course url from the request`
     }
 
     const course = await AppDataSource.getRepository(Course).findOneBy({
@@ -42,5 +42,6 @@ export async function findCourseByUrl(
     })
   } catch (error) {
     logger.error(`Error calling findCourseByUrl()...`)
+    return next(error)
   }
 }
