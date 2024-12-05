@@ -10,7 +10,7 @@ export async function getAllCourses(
   next: NextFunction,
 ) {
   try {
-    logger.debug(`Called getAllCourses()...`)
+    logger.debug(`Called getAllCourses()...`, request['user'])
 
     const courses = await AppDataSource.getRepository(Course)
       .createQueryBuilder('courses')
